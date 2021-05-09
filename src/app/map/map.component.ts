@@ -6,7 +6,6 @@ import {circle, LatLngExpression, Map, map, marker} from 'leaflet';
   selector: 'app-map',
   template: '<div id="map" style="height: 70em; width: 70em"></div>',
   styleUrls: [
-    './map.component.css',
     '../../../node_modules/leaflet/dist/leaflet.css'],
 })
 export class MapComponent implements OnInit {
