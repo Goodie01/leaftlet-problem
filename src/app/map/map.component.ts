@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {circle, LatLngExpression, Map, map, marker} from 'leaflet';
-
+import * as L from 'leaflet';
 
 @Component({
   selector: 'app-map',
@@ -9,13 +8,13 @@ import {circle, LatLngExpression, Map, map, marker} from 'leaflet';
     '../../../node_modules/leaflet/dist/leaflet.css'],
 })
 export class MapComponent implements OnInit {
-  private map!: Map;
+  private map!: L.Map;
 
   constructor() {
   }
 
   ngOnInit(): void {
-    this.map = map('map', {
+    this.map = L.map('map', {
       attributionControl: false,
       zoomControl: false,
     });
@@ -29,8 +28,8 @@ export class MapComponent implements OnInit {
     this.map.setView([0, 0], 4);
   }
 
-  private createMarkers(latLang: LatLngExpression) {
-    marker(latLang).addTo(this.map);
-    circle(latLang, {radius: 800, color: 'red'}).addTo(this.map);
+  private createMarkers(latLang: L.LatLngExpression) {
+    L.marker(latLang).addTo(this.map);
+    L.circle(latLang, {radius: 800, color: 'red'}).addTo(this.map);
   }
 }
