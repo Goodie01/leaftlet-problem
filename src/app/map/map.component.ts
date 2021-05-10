@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import * as L from 'leaflet';
 
 @Component({
   selector: 'app-map',
   template: '<div id="map" style="height: 70em; width: 70em"></div>',
-  styleUrls: [
-    '../../../node_modules/leaflet/dist/leaflet.css'],
+  styleUrls: ['../../../node_modules/leaflet/dist/leaflet.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class MapComponent implements OnInit {
   private map!: L.Map;
